@@ -1,17 +1,17 @@
 <div class="col-12">
     <div class="card">
-        <h5>Rotas Geradas</h5>
+        <h5>Gestão de Rotas</h5>
         <p-toolbar styleClass="mb-4">
             <ng-template pTemplate="left">
                 <div class="my-2">
                     <label for="calendar" class="mr-2">Rotas geradas em:</label>
                     <p-calendar class="mr-2"
-                    [(ngModel)]="selectedDate" 
-                    [iconDisplay]="'input'" 
+                    [(ngModel)]="selectedDate"
+                    [iconDisplay]="'input'"
                     [showIcon]="true"
                     id="calendar"
                     dateFormat="dd/mm/yy"
-                    LocalDate 
+                    LocalDate
                     inputId="icondisplay"
                     (onSelect)="filterByDate()"/>
                 </div>
@@ -19,9 +19,9 @@
         </p-toolbar>
         <p-table [value]="filteredRotas" dataKey="name" [expandedRowKeys]="expandedRows" responsiveLayout="scroll">
             <ng-template pTemplate="caption">
-                
+
                 <div class="flex table-header">
-                    
+
                 </div>
             </ng-template>
             <ng-template pTemplate="header">
@@ -41,7 +41,7 @@
                     <td style="min-width: 12rem;">{{rota.id}}</td>
                     <td style="min-width: 8rem;">{{rota.distanciaTotal}} KM</td>
                     <td>
-                        <p-tag 
+                        <p-tag
                             [severity]="rota.closed ? 'success' : 'danger'"
                             [value]="rota.closed ? 'Realizada' : 'Pendente'">
                         </p-tag>
@@ -72,12 +72,12 @@
                     <td>{{pedido.id}}</td>
                     <td>{{pedido.name}}</td>
                     <td>{{pedido.quantity}}</td>
-                    <td>{{pedido.price | currency:'BRK'}}</td>
+                    <td>{{pedido.price | currency:'BRL'}}</td>
                 </tr>
             </ng-template>
             <ng-template pTemplate="emptymessage">
                 <tr>
-                    <td colspan="6">There are no order for this product yet.</td>
+                    <td colspan="6">Ainda não há pedidos para este produto.</td>
                 </tr>
             </ng-template>
         </p-table>
